@@ -1,0 +1,477 @@
+/* ==========================================================================
+   Perry Brothers Oil - Modern Redesign Overlay
+   Loaded after all Astra/Elementor CSS to override the default look.
+   ========================================================================== */
+
+/* ---------- Color Palette ---------- */
+:root {
+  --ast-global-color-0: #1B3A5C;     /* Navy primary */
+  --ast-global-color-1: #C7882A;     /* Amber accent / hover */
+  --ast-global-color-2: #1B3A5C;     /* Headings */
+  --ast-global-color-3: #3A3F47;     /* Body text */
+  --ast-global-color-4: #F8F9FA;     /* Light background */
+  --ast-global-color-5: #FFFFFF;     /* White */
+  --ast-global-color-6: #DEE2E6;     /* Borders */
+  --ast-global-color-7: #2C3038;     /* Dark gray */
+  --ast-global-color-8: #0D1117;     /* Near-black */
+  --ast-border-color: #DEE2E6;
+
+  /* Elementor palette sync */
+  --e-global-color-astglobalcolor0: #1B3A5C;
+  --e-global-color-astglobalcolor1: #C7882A;
+  --e-global-color-astglobalcolor2: #1B3A5C;
+  --e-global-color-astglobalcolor3: #3A3F47;
+  --e-global-color-astglobalcolor4: #F8F9FA;
+  --e-global-color-astglobalcolor5: #FFFFFF;
+  --e-global-color-astglobalcolor6: #DEE2E6;
+  --e-global-color-astglobalcolor7: #2C3038;
+  --e-global-color-astglobalcolor8: #0D1117;
+
+  --pbo-navy: #1B3A5C;
+  --pbo-navy-dark: #132A43;
+  --pbo-amber: #C7882A;
+  --pbo-amber-light: #D4992E;
+  --pbo-text: #3A3F47;
+  --pbo-light: #F8F9FA;
+  --pbo-white: #FFFFFF;
+  --pbo-border: #DEE2E6;
+  --pbo-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --pbo-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --pbo-radius: 8px;
+  --pbo-radius-sm: 4px;
+  --pbo-transition: 0.25s ease;
+}
+
+/* ---------- Typography ---------- */
+html {
+  font-size: 100% !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button, input, select, textarea,
+.ast-button, .ast-custom-button {
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif !important;
+  color: var(--pbo-text);
+  line-height: 1.7;
+}
+
+h1, .entry-content h1,
+h2, .entry-content h2,
+h3, .entry-content h3,
+h4, .entry-content h4,
+h5, .entry-content h5,
+h6, .entry-content h6,
+.site-title, .site-title a {
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--pbo-navy) !important;
+  letter-spacing: -0.01em;
+}
+
+h1, .entry-content h1 { font-size: 2.75rem !important; line-height: 1.2 !important; }
+h2, .entry-content h2 { font-size: 2rem !important; line-height: 1.25 !important; }
+h3, .entry-content h3 { font-size: 1.5rem !important; line-height: 1.3 !important; }
+
+.elementor-widget-heading .elementor-heading-title {
+  color: var(--pbo-navy) !important;
+}
+
+/* ---------- Global / Body ---------- */
+body, .ast-separate-container {
+  background-color: var(--pbo-light) !important;
+}
+
+::selection {
+  background-color: var(--pbo-navy);
+  color: #fff;
+}
+
+a { color: var(--pbo-navy); transition: color var(--pbo-transition); }
+a:hover, a:focus { color: var(--pbo-amber); }
+
+/* ---------- Header ---------- */
+.ast-primary-header-bar,
+.ast-above-header.ast-above-header-bar,
+.ast-below-header-bar,
+.ast-builder-menu-1 .main-header-menu,
+.ast-builder-menu-1 .main-header-menu .sub-menu,
+.ast-builder-menu-2 .main-header-menu {
+  background-color: var(--pbo-navy-dark) !important;
+  background-image: none !important;
+}
+
+/* Top bar - subtle distinction */
+.ast-above-header.ast-above-header-bar {
+  background-color: #0F2235 !important;
+}
+
+/* Below header bar - clean navy */
+.ast-below-header-bar {
+  background-color: var(--pbo-navy) !important;
+  margin-top: 0 !important;
+}
+
+/* Logo */
+header .custom-logo-link img {
+  max-width: 260px !important;
+  transition: opacity var(--pbo-transition);
+}
+header .custom-logo-link:hover img {
+  opacity: 0.9;
+}
+
+/* Nav links */
+.ast-builder-menu-1 .menu-item > .menu-link {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  padding-left: 24px !important;
+  letter-spacing: 0.02em;
+  text-transform: none !important;
+  transition: color var(--pbo-transition), background-color var(--pbo-transition);
+}
+
+.ast-builder-menu-1 .menu-item > .menu-link:hover,
+.ast-builder-menu-1 .menu-item > .menu-link:focus {
+  color: var(--pbo-amber) !important;
+}
+
+/* Sub-menus */
+.ast-builder-menu-1 .sub-menu {
+  border: none !important;
+  border-radius: var(--pbo-radius) !important;
+  box-shadow: var(--pbo-shadow-lg) !important;
+  overflow: hidden;
+}
+
+.ast-builder-menu-1 .sub-menu .menu-link {
+  border-color: rgba(255,255,255,0.08) !important;
+  padding: 10px 20px !important;
+  font-size: 0.95rem !important;
+}
+
+.ast-builder-menu-1 .sub-menu .menu-link:hover {
+  background-color: rgba(255,255,255,0.05) !important;
+  color: var(--pbo-amber) !important;
+}
+
+/* Top secondary nav */
+.ast-builder-menu-2 .menu-item > .menu-link {
+  font-size: 0.85rem !important;
+  opacity: 0.8;
+  transition: opacity var(--pbo-transition);
+}
+.ast-builder-menu-2 .menu-item > .menu-link:hover {
+  opacity: 1;
+  color: var(--pbo-amber-light) !important;
+}
+
+/* Fix primary header padding */
+.ast-desktop .ast-primary-header-bar.main-header-bar,
+.ast-header-break-point #masthead .ast-primary-header-bar.main-header-bar {
+  padding-left: 0 !important;
+}
+
+@media (max-width: 544px) {
+  .ast-desktop .ast-primary-header-bar.main-header-bar,
+  .ast-header-break-point #masthead .ast-primary-header-bar.main-header-bar {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Mobile menu trigger */
+[data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-fill {
+  background: var(--pbo-amber) !important;
+  border-radius: var(--pbo-radius-sm) !important;
+}
+
+/* Mobile popup */
+.ast-mobile-popup-drawer.active .ast-mobile-popup-inner {
+  background-color: var(--pbo-navy-dark) !important;
+}
+
+/* ---------- Buttons / CTAs ---------- */
+.menu-toggle, button,
+.ast-button, .ast-custom-button,
+.button,
+input#submit, input[type="button"], input[type="submit"], input[type="reset"],
+.elementor-button,
+.wp-block-button .wp-block-button__link,
+form[CLASS*="wp-block-search__"] .wp-block-search__button {
+  background-color: var(--pbo-amber) !important;
+  border-color: var(--pbo-amber) !important;
+  color: #fff !important;
+  border-radius: var(--pbo-radius) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  text-transform: none !important;
+  transition: all var(--pbo-transition) !important;
+  box-shadow: 0 2px 8px rgba(199, 136, 42, 0.3);
+}
+
+.menu-toggle:hover, button:hover,
+.ast-button:hover, .ast-custom-button:hover,
+.button:hover,
+input#submit:hover, input[type="button"]:hover, input[type="submit"]:hover,
+.elementor-button:hover,
+.wp-block-button .wp-block-button__link:hover,
+button:focus,
+.elementor-button:focus {
+  background-color: var(--pbo-navy) !important;
+  border-color: var(--pbo-navy) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(27, 58, 92, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Outline buttons */
+.wp-block-button.is-style-outline .wp-block-button__link,
+.ast-outline-button {
+  border-color: var(--pbo-navy) !important;
+  color: var(--pbo-navy) !important;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.ast-outline-button:hover {
+  background-color: var(--pbo-navy) !important;
+  border-color: var(--pbo-navy) !important;
+  color: #fff !important;
+}
+
+/* Elementor button size adjustments */
+.elementor-button {
+  padding: 14px 32px !important;
+  font-size: 1rem !important;
+}
+
+/* ---------- Elementor Sections ---------- */
+.elementor-section {
+  transition: opacity 0.3s ease;
+}
+
+/* Add breathing room to top-level sections */
+.elementor-top-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Content cards / widgets */
+.elementor-widget-wrap {
+  transition: transform var(--pbo-transition);
+}
+
+/* Image widgets */
+.elementor-widget-image img {
+  border-radius: var(--pbo-radius) !important;
+}
+
+/* Icon boxes */
+.elementor-widget-icon-box .elementor-icon {
+  transition: transform var(--pbo-transition);
+}
+.elementor-widget-icon-box:hover .elementor-icon {
+  transform: scale(1.08);
+}
+
+/* Text editor widgets - improve readability */
+.elementor-widget-text-editor {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Divider widgets */
+.elementor-widget-divider .elementor-divider-separator {
+  border-color: var(--pbo-border) !important;
+}
+
+/* Star ratings */
+.elementor-star-rating i:before {
+  color: var(--pbo-amber) !important;
+}
+
+/* ---------- Forms ---------- */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select,
+.wpforms-field input,
+.wpforms-field textarea,
+.wpforms-field select {
+  border: 1px solid var(--pbo-border) !important;
+  border-radius: var(--pbo-radius-sm) !important;
+  padding: 12px 16px !important;
+  font-size: 1rem !important;
+  background: #fff !important;
+  transition: border-color var(--pbo-transition), box-shadow var(--pbo-transition);
+}
+
+input:focus, textarea:focus, select:focus,
+input[type="text"]:focus, input[type="email"]:focus,
+input[type="number"]:focus, input[type="tel"]:focus {
+  border-color: var(--pbo-navy) !important;
+  box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.12) !important;
+  outline: none !important;
+}
+
+.wpforms-field-label {
+  font-weight: 600 !important;
+  color: var(--pbo-navy) !important;
+  margin-bottom: 6px !important;
+}
+
+.wpforms-submit {
+  min-width: 180px;
+}
+
+/* ---------- Footer ---------- */
+.site-below-footer-wrap[data-section="section-below-footer-builder"] {
+  background-color: var(--pbo-navy-dark) !important;
+  border-top: 3px solid var(--pbo-amber) !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+.site-below-footer-wrap .ast-builder-grid-row {
+  max-width: 1200px !important;
+  gap: 40px;
+}
+
+.ast-footer-copyright {
+  color: rgba(255,255,255,0.6) !important;
+  font-size: 0.875rem !important;
+}
+
+/* Footer links */
+.site-below-footer-wrap a {
+  color: rgba(255,255,255,0.8) !important;
+  transition: color var(--pbo-transition);
+}
+.site-below-footer-wrap a:hover {
+  color: var(--pbo-amber) !important;
+}
+
+/* Footer text */
+.site-below-footer-wrap .elementor-widget-text-editor,
+.site-below-footer-wrap .elementor-widget-text-editor p {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+/* Footer headings */
+.site-below-footer-wrap .elementor-heading-title {
+  color: #fff !important;
+}
+
+/* Footer logo */
+.site-below-footer-wrap .elementor-widget-image img {
+  max-width: 200px !important;
+  filter: brightness(1.1);
+}
+
+/* ---------- Page Builder Full Width ---------- */
+.ast-page-builder-template .site-content > .ast-container {
+  max-width: 100% !important;
+}
+
+/* Constrain readable content */
+.ast-container {
+  max-width: 1280px !important;
+}
+
+#masthead .ast-container {
+  max-width: 100% !important;
+}
+
+/* ---------- Elementor Column Gaps / Spacing ---------- */
+.elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+  padding: 15px;
+}
+
+/* ---------- Cards / Content Blocks ---------- */
+.elementor-widget-wrap > .elementor-element {
+  margin-bottom: 20px;
+}
+
+/* Service/info cards that have background colors */
+.elementor-section[data-settings*="background"] {
+  border-radius: 0;
+}
+
+/* ---------- Google Maps ---------- */
+.elementor-widget-google_maps iframe {
+  border-radius: var(--pbo-radius) !important;
+  border: 1px solid var(--pbo-border);
+}
+
+/* ---------- Scroll to top ---------- */
+#ast-scroll-top {
+  background-color: var(--pbo-navy) !important;
+  border-radius: 50% !important;
+  box-shadow: var(--pbo-shadow) !important;
+  transition: background-color var(--pbo-transition);
+}
+#ast-scroll-top:hover {
+  background-color: var(--pbo-amber) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 921px) {
+  h1, .entry-content h1 { font-size: 2rem !important; }
+  h2, .entry-content h2 { font-size: 1.6rem !important; }
+  h3, .entry-content h3 { font-size: 1.25rem !important; }
+
+  .elementor-top-section {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .elementor-button {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .site-below-footer-wrap[data-section="section-below-footer-builder"] {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+@media (max-width: 544px) {
+  h1, .entry-content h1 { font-size: 1.75rem !important; }
+  h2, .entry-content h2 { font-size: 1.4rem !important; }
+
+  .elementor-button {
+    padding: 12px 20px !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ast-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .site-below-footer-wrap .ast-builder-grid-row {
+    gap: 24px;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .site-header, .site-below-footer-wrap, #ast-scroll-top { display: none; }
+  body { background: #fff; }
+}
+
+/* ---------- Preload Inter font ---------- */
+/* Add this to HTML head:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+*/
