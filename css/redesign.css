@@ -97,18 +97,23 @@ a:hover, a:focus { color: var(--pbo-amber); }
 .ast-below-header-bar,
 .ast-builder-menu-1 .main-header-menu,
 .ast-builder-menu-1 .main-header-menu .sub-menu,
-.ast-builder-menu-2 .main-header-menu {
+.ast-builder-menu-2 .main-header-menu,
+.ast-header-break-point .ast-above-header-bar,
+.ast-header-break-point .ast-below-header-bar,
+.ast-header-break-point .ast-primary-header-bar {
   background-color: var(--pbo-navy-dark) !important;
   background-image: none !important;
 }
 
 /* Top bar - subtle distinction */
-.ast-above-header.ast-above-header-bar {
+.ast-above-header.ast-above-header-bar,
+.ast-header-break-point .ast-above-header-bar {
   background-color: #0F2235 !important;
 }
 
 /* Below header bar - clean navy */
-.ast-below-header-bar {
+.ast-below-header-bar,
+.ast-below-header-bar.ast-below-header {
   background-color: var(--pbo-navy) !important;
   margin-top: 0 !important;
 }
