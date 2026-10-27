@@ -1,0 +1,10 @@
+# Old WordPress URLs → new paths
+/about-us/              /about/     301
+/def/                   /fuel-delivery/ 301
+/fleet-fueling/         /fuel-delivery/ 301
+/wholesale-fuels/       /fuel-delivery/ 301
+/tire-store/            /tires/     301
+/lubricants-and-fuels/  /lubricants/ 301
+/become-a-client/       /contact/   301
+/become-a-client-2-0/   /contact/   301
+/hunting/               /contact/   301
